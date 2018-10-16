@@ -12,6 +12,10 @@ class App extends Component {
     this.setState({ persons: [{ name: newName }, { name: "Zoy" }] });
   };
 
+  namesChangesHandler = event => {
+    this.setState({ persons: [{ name: event.target.value }, { name: "Zoy" }] });
+  };
+
   render() {
     return (
       <div className="App">
@@ -19,7 +23,10 @@ class App extends Component {
         <button onClick={this.swtichNamesHandler.bind(this, "Dola")}>
           Switch Names
         </button>
-        <Person name={this.state.persons[0].name} />
+        <Person
+          name={this.state.persons[0].name}
+          changed={this.namesChangesHandler}
+        />
         <Person
           name={this.state.persons[1].name}
           click={this.swtichNamesHandler.bind(this, "Dola !")}
