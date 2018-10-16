@@ -18,7 +18,12 @@ class App extends Component {
         <h1>Test React Works</h1>
         <button onClick={this.swtichNamesHandler}>Switch Names</button>
         <Person name={this.state.persons[0].name} />
-        <Person name={this.state.persons[1].name}>Elloooo</Person>
+        <Person
+          name={this.state.persons[1].name}
+          click={this.swtichNamesHandler}
+        >
+          Elloooo
+        </Person>
       </div>
     );
   }
